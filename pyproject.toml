@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "project-game"
+version = "0.1.0"
+description = ""
+authors = ["Chris Proctor <chris@chrisproctor.net>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
