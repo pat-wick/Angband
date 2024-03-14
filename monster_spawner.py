@@ -1,7 +1,7 @@
-# asteroid_spawner.py
+# monster_spawner.py
 # -------------------
-# By MWC Contributors
-# This module defines an AsteroidSpawner agent class.
+# By Pat Wick
+# This module defines a MonsterSpawner agent class.
 
 from random import (
     randint,
