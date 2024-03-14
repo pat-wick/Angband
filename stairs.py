@@ -1,6 +1,6 @@
 class Stairs:
 	character = '#'
-	#name = "stairs"
+	name = "stairs"
 	deadly = False
   
 	def __init__(self, position):
