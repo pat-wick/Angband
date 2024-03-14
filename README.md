@@ -10,3 +10,5 @@ game framework. To play, clone this repository and install the dependencies:
     $ python game.py
 
 This game is currently in the earliest of stages of development and doesn't do a whole lot (yet). Stay tuned.
+
+Use the SPACEBAR to attack, arrow keys to move. Reach the stairs (#) to move to the next level of the dungeon.
