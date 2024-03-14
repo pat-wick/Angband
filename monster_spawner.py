@@ -9,6 +9,7 @@ from random import (
 )
 from enemies import *
 from map import random_empty_position
+from stairs import Stairs
 
 class MonsterSpawner:
     display = False
@@ -25,6 +26,8 @@ class MonsterSpawner:
         for i in range(toSpawn):
             monster = self.choose_monster()(random_empty_position(game))
             game.add_agent(monster)
+            if i == 0:
+                game.add_agent(Stairs(random_empty_position(game)))
 
 
     def should_spawn_monsters(self, floor_number):
