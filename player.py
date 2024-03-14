@@ -97,6 +97,8 @@ class Player:
             if agent.deadly:
                 game.state['message'] = "Monsters can be deadly..."
                 game.end()
+            elif agent.name == "stairs":
+                game.state["Floor"] += 1
         
 
     def get_agent_in_position(self, position, game):
