@@ -5,7 +5,6 @@
 # to be used in an implementation of an adventure game but could
 # generally be adapted for other player character uses.
 
-from retro.agent import ArrowKeyAgent
 from retro.game import Game
 from projectile import Projectile
 
