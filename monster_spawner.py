@@ -27,6 +27,8 @@ class MonsterSpawner:
             monster = self.choose_monster()(random_empty_position(game))
             game.add_agent(monster)
             if i == 0:
+                if game.state["Floor"] != 1:
+                    game.remove_agent_by_name("stairs")
                 game.add_agent(Stairs(random_empty_position(game)))
 
 
