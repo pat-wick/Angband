@@ -99,14 +99,17 @@ class Player:
                 game.end()
             elif agent.name == "stairs":
                 game.state["Floor"] += 1
+            else:
+                # eventually this should gather loot, enter buildings, etc.
+                pass
         
 
     def get_agent_in_position(self, position, game):
         """Checks a location for current agents.
         """
-        agents = game.get_agents_by_position()[position]
-        if agents:
-            return agents[0]
+        agent = game.get_agents_by_position()[position]
+        if agent:
+            return agent[0]
         
     def level_up(self):
         """Player levelup is managed by an xp curve.
