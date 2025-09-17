@@ -5,7 +5,6 @@
 # to be used in an implementation of an adventure game but could
 # generally be adapted for other player character uses.
 
-from retro.game import Game
 from projectile import Projectile
 
 class Player:
@@ -45,6 +44,12 @@ class Player:
             self.character = "D"
             self.speed = 6
             self.damage = int(3 + (self.level / 2))
+
+    def update(self):
+        pass
+
+    def draw(self):
+        pass
 
     def attack(self,game):
         """Warrior is a melee character, mage and rogue use ranged attacks.

@@ -9,41 +9,33 @@
 # In this, v0.2, a general movement and combat system exists, but level
 # generation, items, and monster spawning won't happen until future versions.
 
-from retro.game import Game
+import pyxel
 from player import Player
-from dungeon import Dungeon
-from random import sample
-from wall import Wall
-from map import (
-    board_edges,
-    inner_board,
-    level_one,
-    random_empty_position
-)
-from monster_spawner import MonsterSpawner
 
-print("Welcome to AngBAD (a poor representation of Angband)!\n")
+class App:
+    def __init__(self):
+        pyxel.init(320, 240)
+        print("Welcome to AngBAD (a poor representation of Angband)!\n")
     
-race = input("Choose your race (Human, Elf, Dwarf): ").capitalize()
-while race not in ["Human", "Elf", "Dwarf"]:
-    print("Invalid race. Please choose Human, Elf, or Dwarf.")
-    race = input("Choose your race (Human, Elf, Dwarf): ").capitalize()
+        race = input("Choose your race (Human, Elf, Dwarf): ").capitalize()
+        while race not in ["Human", "Elf", "Dwarf"]:
+            print("Invalid race. Please choose Human, Elf, or Dwarf.")
+            race = input("Choose your race (Human, Elf, Dwarf): ").capitalize()
 
-class_ = input("Choose your class (Warrior, Mage, Rogue): ").capitalize()
-while class_ not in ["Warrior", "Mage", "Rogue"]:
-    print("Invalid class. Please choose Warrior, Mage, or Rogue.")
-    class_ = input("Choose your class (Warrior, Mage, Rogue): ").capitalize()
+        class_ = input("Choose your class (Warrior, Mage, Rogue): ").capitalize()
+        while class_ not in ["Warrior", "Mage", "Rogue"]:
+            print("Invalid class. Please choose Warrior, Mage, or Rogue.")
+            class_ = input("Choose your class (Warrior, Mage, Rogue): ").capitalize()
 
-print(f"\nYou've chosen to play as a {race} {class_}.")
-input("Press Enter to continue. Good luck!")
+        print(f"\nYou've chosen to play as a {race} {class_}.")
+        input("Press Enter to continue. Good luck!")
+        pyxel.run(self.update, self.draw)
 
-board_size = (50,25)
-x,y = board_size
+    def update(self):
+        pass
 
-walls = [Wall(position) for position in board_edges(board_size)]
-level = [Wall(position) for position in level_one(board_size)]
-game = Game(walls + level, {"Race":race, "Class":class_,"CharLevel":1,"Floor":1}, board_size = board_size)
-game.add_agent(MonsterSpawner())
-game.add_agent(Player((x//2,y//2),race,class_))
+    def draw(self):
+        pyxel.cls(0)
+        
 
-game.play()
+App()
